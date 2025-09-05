@@ -1,0 +1,157 @@
+:root {
+	--color-body: #e35d5c;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-purple: #726baf;
+	--radius-10: 1rem;
+	--fz40px: 4rem;
+	--yellow: #e9e25b;
+	--color-blue: #0000ff;
+}
+body {
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	min-height: 100vh;
+	color: var(--color-black);
+	font-size: 1.8rem;
+	margin: 5rem;
+}
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2.5rem;
+	flex-wrap: wrap;
+	/* display: flex; */
+}
+.card {
+	position: relative;
+	width: 32.5rem;
+	height: 45rem;
+	background-color: var(--color-black);
+	border-radius: 1.8rem;
+	overflow: hidden;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.poster {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.poster::before {
+	content: '';
+	position: absolute;
+	bottom: -45%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: 0.3s;
+}
+.card:hover .poster::before {
+	bottom: 0;
+}
+
+.poster img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.3s;
+}
+.card:hover .poster img {
+	transform: scale(1.2);
+}
+.details {
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	width: 100%;
+	height: auto;
+	padding: 1.5em 1.5em 2em;
+	background-color: var(--color-black);
+	backdrop-filter: blur(1.6rem) saturate(120%);
+	transition: 0.3s;
+	color: var(--color-white);
+	z-index: 2;
+}
+.card:hover .details {
+	bottom: 0;
+}
+
+.details h1,
+.details h2 {
+	font-weight: 700;
+}
+
+.details h1 {
+	font-size: 1.5em;
+	margin-bottom: 0.5rem;
+}
+.details h2 {
+	font-weight: 400;
+	font-size: 1em;
+	margin-bottom: 1rem;
+	opacity: 0.6;
+}
+.rating {
+	position: relative;
+	margin-bottom: 1.5rem;
+	display: flex;
+	gap: 0.5rem;
+}
+.rating i {
+	color: #e3c414;
+}
+.rating span {
+	margin-left: 0.3rem;
+}
+
+.tags {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	font-size: 0.9em;
+}
+.tag {
+	padding: 0.35em 0.65em;
+	columns: var(--color-white);
+	border: 0.1rem solid rgba(255 255 255 / 0.5);
+	border-radius: 5em;
+}
+.desc {
+	columns: var(--color-white);
+	opacity: 0.8;
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+.cast h3 {
+	margin-bottom: 0.5em;
+}
+
+.cast ul {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	width: 100%;
+}
+.cast ul li {
+	list-style: none;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.cast ul li img {
+	width: 100%;
+	height: 100%;
+}
